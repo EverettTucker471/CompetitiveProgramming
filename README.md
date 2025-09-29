@@ -2,9 +2,8 @@
 Contains solutions (AC), problems in progress (Workshop), and Competition Problems (Competitions)
 lib includes common techniques and functions for use in other problems
 
-Want to add to lib:
+Lib Includes:
 * Matrix Multiplication
-* Segment Tree
 * Choose formula
 * Catalan Number computation
 * Factor Counting Seive
@@ -12,6 +11,14 @@ Want to add to lib:
 * Extended euclidean algorithm
 * Convex hull construction
 * Area of a polygon
-* Prim's or Kruskal's Algorithm
+* Kruskal's Algorithm
+* Topological Sorting
+* Strongly Connected Components
+* Knapsack
+* Disjoint Set Union
+
+Want to add to lib:
+* Segment Tree
+
 
 ## Feel free to take a look around!
