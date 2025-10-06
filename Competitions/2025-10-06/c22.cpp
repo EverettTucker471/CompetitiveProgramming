@@ -38,7 +38,7 @@ void c22() {
         }
         unordered_map<int, vector<int>> map;
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i <= n; i++) {
             map[partial[i] - diff].push_back(i);
         }
 
@@ -59,7 +59,7 @@ void c22() {
         */
 
         int rtn = n;
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i <= n; i++) {
             if (map.count(partial[i])) {
                 while (!map[partial[i]].empty() && map[partial[i]].back() <= i) map[partial[i]].pop_back();
                 if (!map[partial[i]].empty()) rtn = min(rtn, map[partial[i]].back() - i);
