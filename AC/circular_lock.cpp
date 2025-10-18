@@ -38,6 +38,7 @@ void circular_lock() {
         sz %= p;
         sw %= p;
         
+        // Going around in a counter-clockwise circle from w to z
         sy = (sy + 10 * p - sw) % p;
         sx = (sx + 10 * p - sy) % p;
         sz = (sz + 10 * p - sx) % p;
