@@ -16,9 +16,12 @@ Lib Includes:
 * Strongly Connected Components
 * Knapsack
 * Disjoint Set Union
+* Dijkstra's Algorithm
 
 Want to add to lib:
 * Segment Tree
+* Prefix Tree
+* Knuth-Morrit-Pratt String Matching Algorithm
 
 
 ## Feel free to take a look around!
