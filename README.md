@@ -1,6 +1,5 @@
 # Competitive Programming
-Contains solutions (AC), problems in progress (Workshop), and Competition Problems (Competitions)
-lib includes common techniques and functions for use in other problems
+Contains solutions (AC), problems in progress (Workshop), Competition Problems (Competitions), and common techniques and methods (lib).
 
 Lib Includes:
 * Matrix Multiplication
