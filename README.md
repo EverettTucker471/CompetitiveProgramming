@@ -17,10 +17,11 @@ Lib Includes:
 * Knapsack
 * Disjoint Set Union
 * Dijkstra's Algorithm
+* Fenwick Tree
+* Suffix Array
 
 Want to add to lib:
 * Segment Tree
-* Prefix Tree
 * Knuth-Morrit-Pratt String Matching Algorithm
 
 
