@@ -22,6 +22,8 @@ Lib Includes:
 Want to add to lib:
 * Segment Tree
 * Knuth-Morrit-Pratt String Matching Algorithm
+* Polynomial Rolling Hash
+* Binary Exponentiation
 
 
 ## Feel free to take a look around!
