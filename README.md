@@ -1,6 +1,5 @@
 # Competitive Programming
-Contains solutions (AC), problems in progress (Workshop), and Competition Problems (Competitions)
-lib includes common techniques and functions for use in other problems
+Contains solutions (AC), problems in progress (Workshop), Competition Problems (Competitions), and common techniques and methods (lib).
 
 Lib Includes:
 * Matrix Multiplication
@@ -17,11 +16,14 @@ Lib Includes:
 * Knapsack
 * Disjoint Set Union
 * Dijkstra's Algorithm
+* Fenwick Tree
+* Suffix Array
 
 Want to add to lib:
 * Segment Tree
-* Prefix Tree
 * Knuth-Morrit-Pratt String Matching Algorithm
+* Polynomial Rolling Hash
+* Binary Exponentiation
 
 
 ## Feel free to take a look around!
