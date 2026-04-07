@@ -25,32 +25,33 @@ int main() {
     double total, pita, pizza;
     cin >> total >> pita >> pizza;
 
-    long long p = (int) std::round(total * 100);
-    long long t = (int) std::round(pita * 100);
-    long long z = (int) std::round(pizza * 100);
+    long long p = (long long) std::round(total * 100);
+    long long t = (long long) std::round(pita * 100);
+    long long z = (long long) std::round(pizza * 100);
 
     long long x, y;
     long long gcd = extendedEuclidean(t, z, x, y);
-    long long scale = p / gcd;
-    pair<long long, long long> particular = {scale * x, scale * y};
+    if (p % gcd != 0) exit(0);
+    p /= gcd;
+    t /= gcd;
+    z /= gcd;
 
-    long long s1 = z / gcd;
-    long long s2 = t / gcd;
-    //cout << particular.first << " " << particular.second << endl;
-    long long LIM = 1000000;
+    extendedEuclidean(t, z, x, y);
+    pair<long long, long long> particular = {p * x, p * y};
+    // cout << particular.first << " " << particular.second << "\n";
+
     vector<pair<long long, long long>> solns;
-    for (long long int k = -LIM; k < LIM; k++) {
+    for (long long k = -particular.first / z; k <= particular.second / t; k++) {
         pair<long long, long long> inst = {
-            particular.first + k * s1,
-            particular.second - k * s2 
+            particular.first + k * z,
+            particular.second - k * t 
         };
         if (inst.first >= 0 && inst.second >= 0) {
             solns.push_back(inst);
         } 
     }
 
-    sort(solns.begin(), solns.end());
-    for (auto x : solns) {
+    for (pair<long long, long long> x : solns) {
         cout << x.first << " " << x.second << "\n";
     }
 }
