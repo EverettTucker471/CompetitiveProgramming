@@ -18,6 +18,7 @@ Lib Includes:
 * Dijkstra's Algorithm
 * Fenwick Tree
 * Suffix Array
+* Maximum Unweighted Bipartite Matching
 
 Want to add to lib:
 * Segment Tree
