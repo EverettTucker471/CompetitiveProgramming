@@ -19,6 +19,7 @@ Lib Includes:
 * Fenwick Tree
 * Suffix Array
 * Maximum Unweighted Bipartite Matching
+* Edmond-Karp Maximum Flow
 
 Want to add to lib:
 * Segment Tree
