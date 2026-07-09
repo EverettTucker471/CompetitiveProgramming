@@ -1,7 +1,5 @@
-#include <unordered_map>
-#include <vector>
-#include <string>
-#include <iostream>
+#include <bits/stdc++.h>
+
 using namespace std;
 
 int binaryKnapsack(int n, int W, const vector<int>& w, const vector<int>& v) {
