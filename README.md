@@ -20,6 +20,7 @@ Lib Includes:
 * Suffix Array
 * Maximum Unweighted Bipartite Matching
 * Edmond-Karp Maximum Flow
+* Convex Hull with Monotone Chain
 
 Want to add to lib:
 * Segment Tree
