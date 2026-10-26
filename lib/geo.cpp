@@ -32,6 +32,14 @@ struct Point2f {
     double cross(Point2f right) {
         return x * right.y - y * right.x;
     }
+
+    bool operator<(const Point2f& right) const {
+        return tie(x, y) < tie(right.x, right.y);
+    }
+
+    bool operator==(const Point2f& right) const {
+        return x == right.x && y == right.y;
+    }
 };
 
 struct Point2i {
