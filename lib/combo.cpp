@@ -6,6 +6,22 @@ using namespace std;
 const double EPSILON = 0.0001;
 
 /**
+ * Binary Exponentiation with modulus
+ * @return a^b % m
+ */
+long binpow(long a, long b, long m) {
+    a %= m;
+    long res = 1;
+    while (b > 0) {
+        if (b & 1)
+            res = res * a % m;
+        a = a * a % m;
+        b >>= 1;
+    }
+    return res;
+}
+
+/**
  * Computes n choose k for small result values
  * O(k)
  */
@@ -36,30 +52,6 @@ vector<long long> factorial(long long n, long long mod) {
 
     for (long long i = 1; i <= n; i++) {
         rtn[i] = (rtn[i - 1] * i) % mod;
-    }
-
-    return rtn;
-}
-
-/**
- * Computes the modular inverse of k mod m
- * O(logk)
- */
-long long inverse(long long k, long long m) {
-    return k <= 1 ? k : m - (long long)(m / k) * inverse(m % k, m) % m;
-}
-
-/**
- * Computes the modular inverses of all numbers in [1, m - 1] mod m
- * inverseArray(m)[i] = the modular inverse of i mod m
- * O(m)
- */
-vector<long long> inverseArray(long long m) {
-    vector<long long> rtn(m);
-    rtn[1] = 1;
-
-    for (long long i = 2; i < m; i++) {
-        rtn[i] = m - (long long)(m / i) * rtn[m % i] % m;
     }
 
     return rtn;

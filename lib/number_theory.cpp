@@ -1,6 +1,29 @@
 #include <bits/stdc++.h>
-
 using namespace std;
+
+/**
+ * Computes the modular inverse of k mod m
+ * O(logk)
+ */
+long long inverse(long long k, long long m) {
+    return k <= 1 ? k : m - (long long)(m / k) * inverse(m % k, m) % m;
+}
+
+/**
+ * Computes the modular inverses of all numbers in [1, m - 1] mod m
+ * inverseArray(m)[i] = the modular inverse of i mod m
+ * O(m)
+ */
+vector<long long> inverseArray(long long m) {
+    vector<long long> rtn(m);
+    rtn[1] = 1;
+
+    for (long long i = 2; i < m; i++) {
+        rtn[i] = m - (long long)(m / i) * rtn[m % i] % m;
+    }
+
+    return rtn;
+}
 
 /**
  * Computes the greatest common divisor of a and b
@@ -61,6 +84,7 @@ vector<long long> factorization(long long n) {
  * Returns an array of length n + 1 where
  * divisorCount[i] = the number of divisors of i
  * O(nlogn)
+ * For a single number, use factorization and math
  */
 vector<int> divisorCount(int n) {
     vector<int> rtn(n + 1, 1);
@@ -104,4 +128,28 @@ long long extendedEuclidean(long long a, long long b, long long& x, long long& y
     x = y1;
     y = x1 - y1 * (a / b);
     return d;
+}
+
+/**
+ * Used to solve a system of congruences of the form:
+ * x % m_1 = a_1 % m_2
+ * x % m_2 = a_2 % m_2
+ * ...
+ * x % m_n = a_n % m_n
+ * @param congs is a vector of {a_i, m_i} pairs
+ * @return x, the solution to the congruences
+ */
+long long chinese_remainder_theorem(vector<pair<long, long>> const& congs) {
+    long M = 1;
+    for (auto const& cong : congs) M *= cong.second;
+
+    long sol = 0;
+    for (auto const& cong : congs) {
+        long a_i = cong.first;
+        long M_i = M / cong.second;
+        long N_i = inverse(M_i, cong.second);
+        sol = (sol + ((a_i * M_i) % M) * N_i) % M;
+    }
+
+    return sol;
 }

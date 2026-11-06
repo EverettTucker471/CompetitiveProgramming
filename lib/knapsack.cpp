@@ -2,6 +2,9 @@
 
 using namespace std;
 
+/**
+ * Each item can only either appear or not in the knapsack
+ */
 int binaryKnapsack(int n, int W, const vector<int>& w, const vector<int>& v) {
     vector<int> dp(W + 1, 0);
     for (int i = 1; i <= n; i++) {
@@ -12,6 +15,9 @@ int binaryKnapsack(int n, int W, const vector<int>& w, const vector<int>& v) {
     return dp[W];
 }
 
+/**
+ * Each item can be in the knapsack multiple times
+ */
 int completeKnapsack(int n, int W, const vector<int>& w, const vector<int>& v) {
     vector<int> dp(W + 1, 0);
     for (int i = 1; i <= n; i++) {
